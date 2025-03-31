@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Order Confirmation - Daraz Clone{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-12 text-center">
+    <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+        <div class="text-green-500 text-6xl mb-4">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1 class="text-3xl font-bold mb-4">Order Confirmed!</h1>
+        <p class="text-lg mb-6">Thank you for your order #{{ order.id }}</p>
+        
+        <div class="bg-gray-100 rounded-lg p-6 mb-6 text-left">
+            <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+            <div class="space-y-3">
+                <div class="flex justify-between">
+                    <span>Payment Method:</span>
+                    <span class="font-medium">{{ order.get_payment_method_display }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Shipping Address:</span>
+                    <span class="font-medium">{{ order.shipping_address }}</span>
+                </div>
+                <div class="flex justify-between text-lg font-bold pt-3 border-t">
+                    <span>Total:</span>
+                    <span class="text-[#F57224]">${{ order.total }}</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="mb-6">We've sent a confirmation email to your registered address.</p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{% url 'store:product_list' %}" 
+               class="bg-white border border-[#F57224] text-[#F57224] px-6 py-2 rounded-lg font-medium hover:bg-orange-50 transition">
+                Continue Shopping
+            </a>
+            <a href="{% url 'store:account' %}" 
+               class="bg-[#F57224] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#E0611A] transition">
+                View Order History
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
