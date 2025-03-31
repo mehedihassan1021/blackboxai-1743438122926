@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} - Daraz Clone{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-8">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="md:flex">
+            <!-- Product Image -->
+            <div class="md:w-1/2 p-6">
+                <img src="{{ product.image }}" alt="{{ product.name }}" class="w-full h-auto rounded-lg">
+            </div>
+            
+            <!-- Product Info -->
+            <div class="md:w-1/2 p-6">
+                <h1 class="text-2xl font-bold mb-2">{{ product.name }}</h1>
+                
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <span class="text-gray-600">(42 reviews)</span>
+                </div>
+                
+                <div class="mb-6">
+                    {% if product.discount_price %}
+                    <span class="text-3xl font-bold text-[#F57224]">${{ product.discount_price }}</span>
+                    <span class="text-xl text-gray-500 line-through ml-2">${{ product.price }}</span>
+                    {% else %}
+                    <span class="text-3xl font-bold text-[#F57224]">${{ product.price }}</span>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-6">
+                    <p class="text-gray-700">{{ product.description }}</p>
+                </div>
+                
+                <div class="flex items-center mb-6">
+                    <span class="font-medium mr-4">Quantity:</span>
+                    <div class="flex items-center border rounded">
+                        <button class="px-3 py-1 text-lg">-</button>
+                        <span class="px-4 py-1 border-x">1</span>
+                        <button class="px-3 py-1 text-lg">+</button>
+                    </div>
+                </div>
+                
+                <button class="w-full bg-[#F57224] text-white py-3 rounded-lg font-bold hover:bg-[#E0611A] transition">
+                    <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product Tabs -->
+        <div class="border-t mt-8">
+            <div class="flex border-b">
+                <button class="px-6 py-3 font-medium border-b-2 border-[#F57224]">Description</button>
+                <button class="px-6 py-3 font-medium text-gray-500">Specifications</button>
+                <button class="px-6 py-3 font-medium text-gray-500">Reviews</button>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-700">{{ product.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
