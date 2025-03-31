@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daraz Clone Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-[#F57224] text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-2xl font-bold">Daraz Clone</h1>
+                <div class="relative w-64">
+                    <input type="text" placeholder="Search products..." class="w-full px-4 py-2 rounded text-gray-800">
+                    <button class="absolute right-0 top-0 h-full px-4 bg-yellow-500 rounded-r">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#" class="hover:text-yellow-200"><i class="fas fa-user mr-1"></i> Account</a>
+                <a href="#" class="hover:text-yellow-200"><i class="fas fa-heart mr-1"></i> Wishlist</a>
+                <a href="#" class="hover:text-yellow-200"><i class="fas fa-shopping-cart mr-1"></i> Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Navigation -->
+    <div class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex space-x-6 overflow-x-auto">
+            <a href="#" class="whitespace-nowrap px-3 py-1 hover:text-[#F57224]">Electronics</a>
+            <a href="#" class="whitespace-nowrap px-3 py-1 hover:text-[#F57224]">Fashion</a>
+            <a href="#" class="whitespace-nowrap px-3 py-1 hover:text-[#F57224]">Home & Living</a>
+            <a href="#" class="whitespace-nowrap px-3 py-1 hover:text-[#F57224]">Beauty</a>
+            <a href="#" class="whitespace-nowrap px-3 py-1 hover:text-[#F57224]">Sports</a>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="bg-gradient-to-r from-[#F57224] to-[#FFA41C] rounded-lg p-8 text-white">
+            <h2 class="text-3xl font-bold mb-2">Biggest Sale of the Year!</h2>
+            <p class="mb-4">Up to 70% off on selected items</p>
+            <button class="bg-white text-[#F57224] px-6 py-2 rounded font-medium">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="container mx-auto px-4 py-6">
+        <h2 class="text-2xl font-bold mb-4">Featured Products</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition">
+                <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg" alt="Smartphone" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="font-medium text-lg mb-1">Smartphone X Pro</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm ml-2">(42)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-[#F57224]">$299.99</span>
+                        <button class="bg-[#F57224] text-white px-3 py-1 rounded text-sm">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition">
+                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg" alt="Headphones" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="font-medium text-lg mb-1">Wireless Headphones</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm ml-2">(28)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-[#F57224]">$89.99</span>
+                        <button class="bg-[#F57224] text-white px-3 py-1 rounded text-sm">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition">
+                <img src="https://images.pexels.com/photos/1036857/pexels-photo-1036857.jpeg" alt="Watch" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="font-medium text-lg mb-1">Smart Watch</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm ml-2">(56)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-[#F57224]">$159.99</span>
+                        <button class="bg-[#F57224] text-white px-3 py-1 rounded text-sm">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition">
+                <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg" alt="Shoes" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="font-medium text-lg mb-1">Running Shoes</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm ml-2">(34)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-[#F57224]">$65.99</span>
+                        <button class="bg-[#F57224] text-white px-3 py-1 rounded text-sm">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-[#F57224]">Help Center</a></li>
+                        <li><a href="#" class="hover:text-[#F57224]">How to Buy</a></li>
+                        <li><a href="#" class="hover:text-[#F57224]">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">About Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-[#F57224]">About Daraz Clone</a></li>
+                        <li><a href="#" class="hover:text-[#F57224]">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-[#F57224]">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Payment Methods</h3>
+                    <div class="flex space-x-4">
+                        <i class="fab fa-cc-visa text-2xl"></i>
+                        <i class="fab fa-cc-mastercard text-2xl"></i>
+                        <i class="fab fa-cc-paypal text-2xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-[#F57224]"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="hover:text-[#F57224]"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="hover:text-[#F57224]"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2023 Daraz Clone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
