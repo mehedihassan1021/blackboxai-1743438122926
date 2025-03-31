@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Featured Products</h1>
+    
+    <!-- Featured Products Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {% for product in featured_products %}
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <img src="{{ product.image }}" alt="{{ product.name }}" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg font-semibold">{{ product.name }}</h3>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-[#F57224] font-bold">${{ product.current_price }}</span>
+                    <button class="bg-[#F57224] text-white px-3 py-1 rounded text-sm">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Categories Section -->
+    <h2 class="text-2xl font-bold mt-12 mb-4">Shop by Category</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {% for category in categories %}
+        <a href="{% url 'store:product_list' %}?category={{ category.slug }}" 
+           class="bg-white p-4 rounded-lg shadow text-center hover:bg-gray-50 transition">
+            <h3 class="font-medium">{{ category.name }}</h3>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
