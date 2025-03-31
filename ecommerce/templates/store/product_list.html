@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Products - Daraz Clone{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-8">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold">All Products</h1>
+        <div class="flex space-x-4">
+            <select class="border rounded px-3 py-1">
+                <option>Sort by</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Top Rated</option>
+            </select>
+            <select class="border rounded px-3 py-1">
+                <option>Filter</option>
+                <option>Under $50</option>
+                <option>$50 - $100</option>
+                <option>Above $100</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {% for product in products %}
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <a href="{% url 'store:product_detail' product.pk %}">
+                <img src="{{ product.image }}" alt="{{ product.name }}" class="w-full h-48 object-cover">
+            </a>
+            <div class="p-4">
+                <a href="{% url 'store:product_detail' product.pk %}" class="hover:text-[#F57224]">
+                    <h3 class="text-lg font-semibold">{{ product.name }}</h3>
+                </a>
+                <div class="flex items-center my-2">
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <span class="text-gray-500 text-sm ml-2">(42)</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-[#F57224] font-bold">${{ product.current_price }}</span>
+                    {% if product.discount_price %}
+                    <span class="text-gray-500 text-sm line-through">${{ product.price }}</span>
+                    {% endif %}
+                    <button class="bg-[#F57224] text-white px-3 py-1 rounded text-sm">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
